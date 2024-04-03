@@ -72,8 +72,8 @@
                         </ul>
                     </div>
                     <div class="chat__main">
-                        <div v-for="(message, i) in contacts[currentChat].messages" class="chat__main__container">
-                            <div class="message" :class="message.status === 'sent' ? 'sent' : 'received' " >
+                        <div  class="chat__main__container">
+                            <div v-for="(message, i) in contacts[currentChat].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received' " >
                                 <div class="message__text">{{message.message}}</div>
                                 <div class="message__menu">
                                     <div class="menu-icon"><i class="fa-solid fa-chevron-down"></i></div>
