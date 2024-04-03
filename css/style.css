@@ -151,7 +151,6 @@ body{
     border-radius: 10px;
     display: flex;
     position: relative;
-    margin: 2px 0;
 }
 
 .chat__main__container .message:last-child{
