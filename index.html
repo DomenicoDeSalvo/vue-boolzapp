@@ -40,8 +40,8 @@
                     </div>
                     <!-- Contacts list -->
                     <div class="contacts">
-                        <ul v-for="contact in contacts" class="contacts__list">
-                            <li class="card contacts__card">
+                        <ul v-for="(contact, i) in contacts" class="contacts__list">
+                            <li @click="currentChat = i" class="card contacts__card">
                                 <img class="avatar" :src="contact.avatar" :alt="contact.name">
                                 <div class="contacts__card__body">
                                     <div class="contact-preview">
@@ -58,10 +58,10 @@
                 <!-- CHAT -->
                 <section class="chat">
                     <div class="chat__top-bar">
-                        <div class="card">
-                            <img class="avatar" src="./img/avatar_1.jpg" alt="marco">
+                        <div v-for="(contact, i) in contacts" :class="i !== currentChat ? 'hidden' : ''" class="card">
+                            <img class="avatar" :src="contact.avatar" :alt="contact.name">
                             <div class="card__body">
-                                <h4>Michele</h4>
+                                <h4>{{contact.name}}</h4>
                                 <div class="last__access">Ultimo accesso oggi alle 16:16</div>
                             </div>
                         </div>

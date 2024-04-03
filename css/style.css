@@ -80,6 +80,9 @@ body{
     gap: 15px;   
 }
 
+.hidden{
+    display: none;
+}
  
 /* SIDEBAR */
 .sidebar{
@@ -87,7 +90,8 @@ body{
 }
 
 /* Contacts layout */
-.contacts__card:not(:last-child){
+.contacts__card{
+    cursor: pointer;
     border-bottom: 1px solid lightgrey;
 }
 
