@@ -72,9 +72,9 @@
                         </ul>
                     </div>
                     <div class="chat__main">
-                        <div class="chat__main__container">
-                            <div class="message sent">
-                                <div class="message__text">{{contacts[currentChat].messages}}</div>
+                        <div v-for="(message, i) in contacts[currentChat].messages" class="chat__main__container">
+                            <div class="message" :class="message.status === 'sent' ? 'sent' : 'received' " >
+                                <div class="message__text">{{message.message}}</div>
                                 <div class="message__menu">
                                     <div class="menu-icon"><i class="fa-solid fa-chevron-down"></i></div>
                                     <ul class="menu__content">
@@ -84,18 +84,6 @@
                                     </ul>
                                 </div>
                                 <div class="message__time">15:50</div>
-                            </div>
-                            <div class="message received">
-                                <div class="message__text">Lorem ipsum dolor sit, amet consectetur adipisicing..</div>
-                                <div class="message__menu">
-                                    <div class="menu-icon"><i class="fa-solid fa-chevron-down"></i></div>
-                                    <ul class="menu__content">
-                                        <li>Copia</li>
-                                        <li>Inoltra</li>
-                                        <li>Rispondi</li>
-                                    </ul>
-                                </div>
-                                <div class="message__time">15:57</div>
                             </div>
                        </div>
                     </div>
