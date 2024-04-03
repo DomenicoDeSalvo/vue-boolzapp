@@ -40,85 +40,15 @@
                     </div>
                     <!-- Contacts list -->
                     <div class="contacts">
-                        <ul class="contacts__list">
+                        <ul v-for="contact in contacts" class="contacts__list">
                             <li class="card contacts__card">
-                                <img class="avatar" src="./img/avatar_1.jpg" alt="io">
+                                <img class="avatar" :src="contact.avatar" :alt="contact.name">
                                 <div class="contacts__card__body">
                                     <div class="contact-preview">
-                                        <h4>Michele</h4>
+                                        <h4>{{contact.name}}</h4>
                                         <div class="last-message">Lorem ipsum dolor sit amet.</div>
                                     </div>
                                     <div class="time">16:11</div>
-                                </div>
-                            </li>
-                            <li class="card contacts__card">
-                                <img class="avatar" src="./img/avatar_2.jpg" alt="io">
-                                <div class="contacts__card__body">
-                                    <div class="contact-preview">
-                                        <h4>Fabio</h4>
-                                        <div class="last-message">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                    <div class="time">16:05</div>
-                                </div>
-                            </li>
-                            <li class="card contacts__card">
-                                <img class="avatar" src="./img/avatar_3.jpg" alt="io">
-                                <div class="contacts__card__body">
-                                    <div class="contact-preview">
-                                        <h4>Samuele</h4>
-                                        <div class="last-message">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                    <div class="time">16:03</div>
-                                </div>
-                            </li>
-                            <li class="card contacts__card">
-                                <img class="avatar" src="./img/avatar_4.jpg" alt="io">
-                                <div class="contacts__card__body">
-                                    <div class="contact-preview">
-                                        <h4>Alessandro B.</h4>
-                                        <div class="last-message">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                    <div class="time">15:50</div>
-                                </div>
-                            </li>
-                            <li class="card contacts__card">
-                                <img class="avatar" src="./img/avatar_5.jpg" alt="io">
-                                <div class="contacts__card__body">
-                                    <div class="contact-preview">
-                                        <h4>Alessandro L.</h4>
-                                        <div class="last-message">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                    <div class="time">15:45</div>
-                                </div>
-                            </li>
-                            <li class="card contacts__card">
-                                <img class="avatar" src="./img/avatar_6.jpg" alt="io">
-                                <div class="contacts__card__body">
-                                    <div class="contact-preview">
-                                        <h4>Claudia</h4>
-                                        <div class="last-message">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                    <div class="time">15:40</div>
-                                </div>
-                            </li>
-                            <li class="card contacts__card">
-                                <img class="avatar" src="./img/avatar_7.jpg" alt="io">
-                                <div class="contacts__card__body">
-                                    <div class="contact-preview">
-                                        <h4>Federico</h4>
-                                        <div class="last-message">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                    <div class="time">15:22</div>
-                                </div>
-                            </li>
-                            <li class="card contacts__card">
-                                <img class="avatar" src="./img/avatar_8.jpg" alt="io">
-                                <div class="contacts__card__body">
-                                    <div class="contact-preview">
-                                        <h4>Davide</h4>
-                                        <div class="last-message">Lorem ipsum dolor sit amet.</div>
-                                    </div>
-                                    <div class="time">15:15</div>
                                 </div>
                             </li>
                         </ul>
