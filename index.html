@@ -90,7 +90,7 @@
                     </div>
                     <div class="chat__bottombar">
                         <div><i class="fa-regular fa-face-smile"></i></div>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input @keyup.enter="sendMessage(currentChat)" v-model.trim="newMessage" type="text" placeholder="Scrivi un messaggio">
                         <div><i class="fa-solid fa-microphone"></i></div>
                     </div>
                 </section>
