@@ -178,7 +178,7 @@ createApp({
     sendMessage(currentChat){
         this.contacts[currentChat].messages.push(
           {
-            date: '10/01/2020 15:51:00',
+            date: 'ora',
             message: this.newMessage,
             status: 'sent'
           }
