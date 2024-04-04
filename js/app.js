@@ -186,7 +186,7 @@ createApp({
             status: 'sent'
           }
         )
-        this.autoAnswer = setInterval(this.automatedAnswer(currentChat),5000)  
+        this.autoAnswer = setTimeout(() => this.automatedAnswer(currentChat),1000);  
       }
       this.newMessage = ''
     },
@@ -199,7 +199,7 @@ createApp({
           status: 'received'
         }
       )
-    }
+    },
 
   },
 
