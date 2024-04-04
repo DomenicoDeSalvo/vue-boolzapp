@@ -6,6 +6,7 @@ createApp({
 
         currentChat: 0,
         newMessage:'',
+        autoAnswer: null,
 
         //Contatti con messaggi
         
@@ -184,7 +185,8 @@ createApp({
             message: this.newMessage,
             status: 'sent'
           }
-        )  
+        )
+        this.autoAnswer = setInterval(this.automatedAnswer(currentChat),5000)  
       }
       this.newMessage = ''
     },
