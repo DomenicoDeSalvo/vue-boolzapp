@@ -176,16 +176,32 @@ createApp({
   },
   methods:{
     sendMessage(currentChat){
+      if(this.newMessage !== ''){
+
         this.contacts[currentChat].messages.push(
           {
             date: 'ora',
             message: this.newMessage,
             status: 'sent'
           }
-        )
-
+        )  
+      }
       this.newMessage = ''
+    },
+
+    automatedAnswer(currentChat){
+      this.contacts[currentChat].messages.push(
+        {
+          date: 'ora',
+          message: 'ok',
+          status: 'received'
+        }
+      )
     }
+
+  },
+
+  mounted(){
 
   }
 
