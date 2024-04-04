@@ -1,4 +1,5 @@
 const { createApp } = Vue
+const { DateTime } = require('luxon');
 
 createApp({
   data() {
