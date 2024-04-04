@@ -201,11 +201,10 @@ createApp({
       )
     },
 
+    deleteMessage(currentChat){
+      this.contacts[currentChat].messages.splice(currentChat,1)
   },
 
-  mounted(){
-
   }
-
   
 }).mount('#app')
