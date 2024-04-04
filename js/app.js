@@ -7,6 +7,7 @@ createApp({
         currentChat: 0,
         newMessage:'',
         autoAnswer: null,
+        currentMessage: '',
 
         //Contatti con messaggi
         
@@ -201,9 +202,9 @@ createApp({
       )
     },
 
-    deleteMessage(currentChat){
-      this.contacts[currentChat].messages.splice(currentChat,1)
-  },
+    // deleteMessage(currentMessage){
+    //   this.contacts[currentChat].messages.splice(currentMessage,1)
+    // },
 
   }
   
