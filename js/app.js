@@ -177,6 +177,10 @@ createApp({
     }
   },
   methods:{
+    changeDate(){
+
+    },
+
     sendMessage(currentChat){
       if(this.newMessage !== ''){
 
@@ -202,9 +206,10 @@ createApp({
       )
     },
 
-    // deleteMessage(currentMessage){
-    //   this.contacts[currentChat].messages.splice(currentMessage,1)
-    // },
+    deleteMessage(array, index){
+      array.splice(index,1)
+      console.log(index)
+    },
 
   }
   

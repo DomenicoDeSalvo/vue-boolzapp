@@ -73,7 +73,7 @@
                     </div>
                     <div class="chat__main">
                         <div  class="chat__main__container">
-                            <div v-for="(message, i) in contacts[currentChat].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received' " >
+                            <div v-for="(message, index) in contacts[currentChat].messages" class="message" :class="message.status === 'sent' ? 'sent' : 'received' " >
                                 <div  class="message__text">{{message.message}}</div>
                                 <div class="message__menu">
                                     <div class="menu-icon"><i class="fa-solid fa-chevron-down"></i></div>
@@ -81,7 +81,7 @@
                                         <li>Copia</li>
                                         <li>Inoltra</li>
                                         <li>Rispondi</li>
-                                        <li>Elimina</li>
+                                        <li @click="deleteMessage(contacts[currentChat].messages ,index)">Elimina</li>
                                     </ul>
                                 </div>
                                 <div class="message__time">{{message.date}}</div>
