@@ -79,10 +79,6 @@ body{
     align-items: center; 
     gap: 15px;   
 }
-
-.selected_chat{
-    background-color: lightgray;
-}
  
 /* SIDEBAR */
 .sidebar{
@@ -247,6 +243,7 @@ cursor: pointer;
         width: 90px;
         border-right: 1px solid lightgray;
     }
+    
     /* Personal */
     .personal{
         height: 70px;
@@ -262,6 +259,14 @@ cursor: pointer;
         height: calc(100% - 70px);
         background-color: white;
         overflow-y: auto;
+    }
+
+    .selected_chat{
+        background-color: lightgray;
+    }
+
+    .contacts__list li:hover{
+        background-color: lightgray;
     }
 
     .contacts__card__body,
