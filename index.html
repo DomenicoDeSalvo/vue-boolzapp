@@ -35,16 +35,16 @@
                         </div>
                     </div>
                     <div class="search-bar">
-                        <input type="text" name="search" placeholder= "Cerca o inizia una nuova chat">
+                        <input v-model="inputValue" type="text" name="search" placeholder= "Cerca o inizia una nuova chat">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <!-- Contacts list -->
                     <div class="contacts">
-                        <ul v-for="(contact, i) in contacts" class="contacts__list">
+                        <ul v-for="(contact, i) in filteredContacts" class="contacts__list">
                             <li @click="currentChat = i" :class="i === currentChat ? 'selected_chat' : ''" class="card contacts__card">
                                 <img class="avatar" :src="contact.avatar" :alt="contact.name">
                                 <div class="contacts__card__body">
-                                    <div v-for="(last, index2) in currentContact.messages"  class="contact-preview">
+                                    <div  class="contact-preview">
                                         <h4>{{contact.name}}</h4>
                                         <div class="last-message">{{}}</div>
                                     </div>

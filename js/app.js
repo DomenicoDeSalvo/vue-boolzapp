@@ -5,8 +5,10 @@ createApp({
     return {
 
         currentChat: 0,
+        inputValue:'',
         newMessage:'',
         autoAnswer: null,
+        currentTime:'',
         currentMessage: '',
 
         //Contatti con messaggi
@@ -173,24 +175,42 @@ createApp({
               }
             ],
             }
-            ]
+        ],
     }
   },
+
+  //COMPUTED
 
   computed:{
-    currentContact(){
-      return this.contacts[this.currentChat]
-    }
-  },
-  methods:{
-    changeDate(){
 
+    currentContact(){
+      return this.filteredContacts[this.currentChat]
     },
 
+    filteredContacts(){
+      let displayedContacts = this.contacts
+
+      if(this.inputValue !== '' && this.inputValue){
+        displayedContacts = displayedContacts.filter((profile) => {
+          return profile.name
+            .toUpperCase()
+            .includes(this.inputValue.toUpperCase())
+        })
+      }
+      return displayedContacts
+    }
+  },
+
+
+  //METHODS
+  
+  methods:{
+
+    //Funzione che permette l'invio di messaggi da parte dell'utente.
     sendMessage(currentChat){
       if(this.newMessage !== ''){
 
-        this.contacts[currentChat].messages.push(
+        this.filteredContacts[currentChat].messages.push(
           {
             date: '10/01/2020 15:51:00',
             message: this.newMessage,
@@ -202,8 +222,9 @@ createApp({
       this.newMessage = ''
     },
 
+    //Funzione che genera una risposta.
     automatedAnswer(currentChat){
-      this.contacts[currentChat].messages.push(
+      this.filteredContacts[currentChat].messages.push(
         {
           date: '10/01/2020 15:51:00',
           message: 'ok',
@@ -212,11 +233,18 @@ createApp({
       )
     },
 
+    //Funzione che permette di cancellare i messaggi.
     deleteMessage(array, index){
       array.splice(index,1)
       console.log(index)
     },
 
+    // //Funzione che fa sì che i nuovi messaggi abbiano l'orario attuale.
+    // timeAcquisition(){
+      
+    //   return currentTime = Date.now()
+      
+    // }
   }
   
 }).mount('#app')
