@@ -176,6 +176,12 @@ createApp({
             ]
     }
   },
+
+  computed:{
+    currentContact(){
+      return this.contacts[this.currentChat]
+    }
+  },
   methods:{
     changeDate(){
 

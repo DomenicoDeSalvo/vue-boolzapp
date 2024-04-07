@@ -44,7 +44,7 @@
                             <li @click="currentChat = i" :class="i === currentChat ? 'selected_chat' : ''" class="card contacts__card">
                                 <img class="avatar" :src="contact.avatar" :alt="contact.name">
                                 <div class="contacts__card__body">
-                                    <div v-for="(last, index2) in contacts[currentChat].messages"  class="contact-preview">
+                                    <div v-for="(last, index2) in currentContact.messages"  class="contact-preview">
                                         <h4>{{contact.name}}</h4>
                                         <div class="last-message">{{}}</div>
                                     </div>
@@ -59,9 +59,9 @@
                 <section class="chat">
                     <div class="chat__top-bar">
                         <div class="card">
-                            <img class="avatar" :src="contacts[currentChat].avatar" :alt="contacts[currentChat].name">
+                            <img class="avatar" :src="currentContact.avatar" :alt="currentContact.name">
                             <div class="card__body">
-                                <h4>{{contacts[currentChat].name}}</h4>
+                                <h4>{{currentContact.name}}</h4>
                                 <div class="last__access">Ultimo accesso oggi alle 16:16</div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="chat__main">
                         <div  class="chat__main__container">
-                            <div v-for="(message, index) in contacts[currentChat].messages" class="message" :class="message.status" >
+                            <div v-for="(message, index) in currentContact.messages" class="message" :class="message.status" >
                                 <div  class="message__text">{{message.message}}</div>
                                 <div class="message__menu">
                                     <div class="menu-icon"><i class="fa-solid fa-chevron-down"></i></div>
@@ -81,7 +81,7 @@
                                         <li>Copia</li>
                                         <li>Inoltra</li>
                                         <li>Rispondi</li>
-                                        <li @click="deleteMessage(contacts[currentChat].messages ,index)">Elimina</li>
+                                        <li @click="deleteMessage(currentContact.messages ,index)">Elimina</li>
                                     </ul>
                                 </div>
                                 <div class="message__time">{{message.date.slice(11,16)}}</div>
