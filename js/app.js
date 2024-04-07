@@ -199,6 +199,7 @@ createApp({
       }
       return displayedContacts
     },
+
   },
 
 
@@ -212,7 +213,7 @@ createApp({
 
         this.filteredContacts[currentChat].messages.push(
           {
-            date: '10/01/2020 15:51:00',
+            date: '',
             message: this.newMessage,
             status: 'sent'
           }
@@ -226,7 +227,7 @@ createApp({
     automatedAnswer(currentChat){
       this.filteredContacts[currentChat].messages.push(
         {
-          date: '10/01/2020 15:51:00',
+          date: '',
           message: 'ok',
           status: 'received'
         }
@@ -239,12 +240,13 @@ createApp({
       console.log(index)
     },
 
-    // //Funzione che fa sì che i nuovi messaggi abbiano l'orario attuale.
-    // timeAcquisition(){
-      
-    //   return currentTime = Date.now()
-      
-    // }
+    //Funzione che fa sì che i nuovi messaggi abbiano l'orario attuale.
+    getCurrentTime(){
+      let currentDateTime = new Date();
+      this.currentTime = currentDateTime;
+      return currentTime
+    }
+
   }
   
 }).mount('#app')
