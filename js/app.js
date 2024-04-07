@@ -186,7 +186,7 @@ createApp({
 
         this.contacts[currentChat].messages.push(
           {
-            date: 'ora',
+            date: '10/01/2020 15:51:00',
             message: this.newMessage,
             status: 'sent'
           }
@@ -199,7 +199,7 @@ createApp({
     automatedAnswer(currentChat){
       this.contacts[currentChat].messages.push(
         {
-          date: 'ora',
+          date: '10/01/2020 15:51:00',
           message: 'ok',
           status: 'received'
         }
