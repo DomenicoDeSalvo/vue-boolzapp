@@ -44,11 +44,11 @@
                             <li @click="currentChat = i" :class="i === currentChat ? 'selected_chat' : ''" class="card contacts__card">
                                 <img class="avatar" :src="contact.avatar" :alt="contact.name">
                                 <div class="contacts__card__body">
-                                    <div  class="contact-preview">
+                                    <div class="contact-preview">
                                         <h4>{{contact.name}}</h4>
-                                        <div class="last-message">{{}}</div>
+                                        <div class="last-message">{{contact.messages.at(-1).message.slice(0,30)}}</div>
                                     </div>
-                                    <div class="time">16:11</div>
+                                    <div class="time">{{contact.messages.at(-1).date.slice(11,16)}}</div>
                                 </div>
                             </li>
                         </ul>

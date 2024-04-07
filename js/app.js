@@ -198,7 +198,7 @@ createApp({
         })
       }
       return displayedContacts
-    }
+    },
   },
 
 
