@@ -46,9 +46,11 @@
                                 <div class="contacts__card__body">
                                     <div class="contact-preview">
                                         <h4>{{contact.name}}</h4>
-                                        <div class="last-message">{{contact.messages.at(-1).message.length > 30 ? contact.messages.at(-1).message.slice(0,30)+"..." : contact.messages.at(-1).message }}</div>
+                                        <div v-if="contact.messages.length < 1"></div>
+                                        <div v-else class="last-message">{{contact.messages.at(-1).message.length > 30 ? contact.messages.at(-1).message.slice(0,30)+"..." : contact.messages.at(-1).message }}</div>
                                     </div>
-                                    <div class="time">{{contact.messages.at(-1).date.slice(11,16)}}</div>
+                                    <div v-if="contact.messages.length < 1"></div>
+                                    <div v-else class="time">{{contact.messages.at(-1).date.slice(11,16)}}</div>
                                 </div>
                             </li>
                         </ul>
