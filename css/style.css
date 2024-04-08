@@ -79,7 +79,11 @@ body{
     align-items: center; 
     gap: 15px;   
 }
- 
+
+.hidden{
+    display: none;
+}
+
 /* SIDEBAR */
 .sidebar{
     display: none;

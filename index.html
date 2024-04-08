@@ -40,8 +40,8 @@
                     </div>
                     <!-- Contacts list -->
                     <div class="contacts">
-                        <ul v-for="(contact, i) in filteredContacts" class="contacts__list">
-                            <li @click="currentChat = i" :class="i === currentChat ? 'selected_chat' : ''" class="card contacts__card">
+                        <ul v-for="(contact, i) in contacts" class="contacts__list">
+                            <li @click="currentChat = i" :class="[isVisible(contact) ? '':'hidden' ,i === currentChat ? 'selected_chat' : '']" class="card contacts__card">
                                 <img class="avatar" :src="contact.avatar" :alt="contact.name">
                                 <div class="contacts__card__body">
                                     <div class="contact-preview">
