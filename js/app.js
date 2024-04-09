@@ -225,7 +225,6 @@ createApp({
     //Funzione che permette di cancellare i messaggi.
     deleteMessage(array, index){
       array.splice(index,1)
-      console.log(index)
     },
 
     //Funzione che stabilisce quali contatti mostrare in base a ciò he viene scritto nella barra di ricerca
